@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:labVII.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="labVII.Views.MainView"
+             x:DataType="vm:MainViewModel">
+
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<StackPanel Margin="20">
+		<TextBlock Text="Sekwencer" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10"/>
+		<TextBox Text="{Binding Sekwencja, Mode=TwoWay}" Width="300" />
+		<Button Content="Zatwierdź" Command="{Binding PrzetworzSekwencjeCommand}" Width="100"/>
+		<TextBlock Text="Wynik:" FontWeight="Bold" Margin="0,10,0,5"/>
+		<TextBlock Text="{Binding Wynik}" TextWrapping="Wrap"/>
+	</StackPanel>
+</UserControl>
